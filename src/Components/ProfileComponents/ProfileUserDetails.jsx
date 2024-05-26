@@ -12,9 +12,9 @@ export const ProfileUserDetails = () =>{
                 </div>
             
 
-            <div>
+            <div className='space-y-5 text-xs'>
                 <div className="flex space-x-10 items-center">
-                <p>username</p>
+                <p>Penguin-walk009</p>
                     <button>Edit profile</button>
                     <TbCircleDashed></TbCircleDashed>
                 </div>
@@ -31,6 +31,10 @@ export const ProfileUserDetails = () =>{
                         <span className='font-semibold mr-2'>3</span>
                         <span>following</span>
                     </div>
+                </div>
+                <div>
+                    <p className='font-semibold'>Cierra Penguin</p>
+                    <p className='font-thin text-sm'>❥❥❥+:;;;:+❥❥❥+:;;;:+❥❥❥+:;;;:+❥❥ ｡♥｡‧˚♡˚ ‧｡♥｡‧˚♡˚ ‧｡♥｡‧˚♡˚ ‧｡♥｡‧˚♡˚ ‧｡♥｡‧˚♡˚ ‧</p>
                 </div>
               </div>
             </div>
