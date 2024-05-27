@@ -12,7 +12,9 @@ const Profile = () =>{
             <div>
                 <ReqUserPostPart />
             </div>
-
+            {/* <div>
+                <ReqUserPostCard />
+            </div> */}
         </div>
     )
 
