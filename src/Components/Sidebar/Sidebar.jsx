@@ -13,6 +13,8 @@ const Sidebar = () => {
             navigate("/username")
         } else if(title === "Home"){
             navigate("/")
+        }else if (title === "Story"){
+            navigate("/Story")
         }
         }
 
