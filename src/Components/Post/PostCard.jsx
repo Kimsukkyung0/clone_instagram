@@ -5,6 +5,9 @@ import { FaRegComment } from 'react-icons/fa';
 import { RiSendPlaneLine } from 'react-icons/ri';
 import { BsBookmarkFill,BsBookmark } from 'react-icons/bs';
 import { FaRegFaceGrinWink } from "react-icons/fa6";
+import CommentModal from "../Comment/CommentModal"
+
+
 
 import "./PostCard.css"
 const PostCard = () =>{
@@ -69,7 +72,11 @@ const PostCard = () =>{
                 </div> 
                 <FaRegFaceGrinWink /> 
              </div>
+                <div>
+                    <CommentModal />
+                </div>
          </div>
+         <CommentModal />
 </div>
     )
 }
