@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Modal, ModalOverlay, ModalContent, ModalBody } from '@chakra-ui/react'
-import { BsThreeDots } from 'react-icons/bs';
+import { BsBookmark, BsBookmarkFill, BsThreeDots } from 'react-icons/bs';
+import CommentCard from './CommentCard';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
+import { FaRegComment } from 'react-icons/fa';
+import { RiSendPlaneLine } from 'react-icons/ri';
+import { FaRegFaceGrinWink } from 'react-icons/fa6';
+import './CommentModal.css'
 
-const CommentModal = ({ onClose, isOpen }) => {
+const CommentModal = ({ onClose, isOpen, isSaved, IsPostLiked, handledPostLike, handleSavePost }) => {
+    const [isPostLiked, setIsPostLiked] = useState(false)
+    const [isBookmarked, setIsBookmarked] = useState(false)
+    const handleLiked = () => {
+        setIsPostLiked(!isPostLiked);
+    }
+    const handleBookmarked = () => {
+        setIsBookmarked(!isBookmarked)
+    }
+
     return (
         <div>
             <Modal size={"4xl"} onClose={onClose} isOpen={true} isCentered>
@@ -13,20 +28,53 @@ const CommentModal = ({ onClose, isOpen }) => {
                             <div className='w-[45%] flex flex-col justify-center'>
                                 <img className='max-h-full w-full' src="https://media.istockphoto.com/id/1777995767/ko/%EC%82%AC%EC%A7%84/%EC%A0%A0%ED%88%AC-%ED%8E%AD%EA%B7%84-%EB%82%A8%EA%B7%B9-%EB%8C%80%EB%A5%99.jpg?s=2048x2048&w=is&k=20&c=w7qHCQImBAnbAb_d6WhzmFJwH7kXd5F9w8S_57Jta0o=" alt="" />
                             </div>
-                            <div className='border w-[55%]'>
-                                <div className=''>
+
+                            <div className='w-[55%] pl-8 '>
+                                <div className='flex justify-between items-center py-5'>
                                     <div className='flex items-center'>
-                                        <img className='w-9 h-9 rounded-full'
-                                            src="https://cdn.pixabay.com/photo/2024/05/09/22/54/penguin-8751952_960_720.jpg"
-                                            alt="" />
+                                        <div>
+                                            <img className='w-9 h-9 rounded-full'
+                                                src="https://cdn.pixabay.com/photo/2024/05/09/22/54/penguin-8751952_960_720.jpg"
+                                                alt="" />
+                                        </div>
+                                        <div className='ml-2'>
+                                            <p>username</p>
+                                        </div>
                                     </div>
-                                    <div className='ml-2'>
-                                        <p>username</p>
+
+                                    <BsThreeDots />
+                                </div>
+                                <hr />
+                                <div>
+                                    {[1, 1, 1, 1,].map(() => <CommentCard />)}
+                                </div>
+
+                                <div className='flex justify-between items-center w-full px-5 py-4'>
+                                    <div className='flex items-center space-x-2'>
+                                        {isPostLiked ? <AiFillHeart className='text-2xl text-red-500 hover:opacity-50 cursor-pointer' onClick={handleLiked} /> : <AiOutlineHeart className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleLiked} />}
+                                        <FaRegComment className="text-2xl hover:opacity-50 cursor-pointer" />
+                                        <RiSendPlaneLine className='text-2xl hober:opacity-50 cursor-pointer' />
+                                    </div>
+                                    <div>
+                                        {isBookmarked ? (
+                                            <BsBookmarkFill className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleBookmarked} />)
+                                            : (< BsBookmark className='cursor-pointer' onClick={handleBookmarked} />)}
+
                                     </div>
                                 </div>
+                                <div className='w-full py-2 px-5'>
+                                    <p>10 likes</p>
+                                    <p className='opacity-50 text-sm'>1 day ago</p>
                                 </div>
-                                <BsThreeDots />
-                               </div>
+                                <div className='flex px-3 justify-between items-center border-t'>
+                                    <div className='w-full '>
+                                        <input className='commentInput w-full px-5 py-4' type="text" placeholder="Add a comment..." />
+                                    </div>
+                                    <FaRegFaceGrinWink />
+                                </div>
+                            </div>
+
+                        </div>
                     </ModalBody>
 
                 </ModalContent>
