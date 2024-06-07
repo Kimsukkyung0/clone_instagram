@@ -24,12 +24,12 @@ const CommentModal = ({ onClose, isOpen, isSaved, IsPostLiked, handledPostLike, 
                 <ModalOverlay />
                 <ModalContent>
                     <ModalBody>
-                        <div className='flex h-[75vh]'>
+                        <div className='flex h-[60vh]'>
                             <div className='w-[45%] flex flex-col justify-center'>
                                 <img className='max-h-full w-full' src="https://media.istockphoto.com/id/1777995767/ko/%EC%82%AC%EC%A7%84/%EC%A0%A0%ED%88%AC-%ED%8E%AD%EA%B7%84-%EB%82%A8%EA%B7%B9-%EB%8C%80%EB%A5%99.jpg?s=2048x2048&w=is&k=20&c=w7qHCQImBAnbAb_d6WhzmFJwH7kXd5F9w8S_57Jta0o=" alt="" />
                             </div>
 
-                            <div className='w-[55%] pl-8 '>
+                            <div className='w-[52%] pl-8 relative'>
                                 <div className='flex justify-between items-center py-5'>
                                     <div className='flex items-center'>
                                         <div>
@@ -45,32 +45,34 @@ const CommentModal = ({ onClose, isOpen, isSaved, IsPostLiked, handledPostLike, 
                                     <BsThreeDots />
                                 </div>
                                 <hr />
-                                <div>
-                                    {[1, 1, 1, 1,].map(() => <CommentCard />)}
+                                <div className='comment'>
+                                    {[1, 1, 1,].map(() => <CommentCard />)}
                                 </div>
 
-                                <div className='flex justify-between items-center w-full px-5 py-4'>
-                                    <div className='flex items-center space-x-2'>
-                                        {isPostLiked ? <AiFillHeart className='text-2xl text-red-500 hover:opacity-50 cursor-pointer' onClick={handleLiked} /> : <AiOutlineHeart className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleLiked} />}
-                                        <FaRegComment className="text-2xl hover:opacity-50 cursor-pointer" />
-                                        <RiSendPlaneLine className='text-2xl hober:opacity-50 cursor-pointer' />
-                                    </div>
-                                    <div>
-                                        {isBookmarked ? (
-                                            <BsBookmarkFill className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleBookmarked} />)
-                                            : (< BsBookmark className='cursor-pointer' onClick={handleBookmarked} />)}
+                                <div className='absolute bottom-0 w-[98%] py-3'>
+                                    <div className='flex justify-between items-center w-full px-5 py-4'>
+                                        <div className='flex items-center space-x-2 w-full'>
+                                            {isPostLiked ? <AiFillHeart className='text-2xl text-red-500 hover:opacity-50 cursor-pointer' onClick={handleLiked} /> : <AiOutlineHeart className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleLiked} />}
+                                            <FaRegComment className="text-2xl hover:opacity-50 cursor-pointer" />
+                                            <RiSendPlaneLine className='text-2xl hober:opacity-50 cursor-pointer' />
+                                        </div>
+                                        <div>
+                                            {isBookmarked ? (
+                                                <BsBookmarkFill className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleBookmarked} />)
+                                                : (< BsBookmark className='cursor-pointer' onClick={handleBookmarked} />)}
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='w-full py-2 px-5'>
-                                    <p>10 likes</p>
-                                    <p className='opacity-50 text-sm'>1 day ago</p>
-                                </div>
-                                <div className='flex px-3 justify-between items-center border-t'>
-                                    <div className='w-full '>
-                                        <input className='commentInput w-full px-5 py-4' type="text" placeholder="Add a comment..." />
+                                    <div className='py-2 px-5'>
+                                        <p>10 likes</p>
+                                        <p className='opacity-50 text-sm'>1 day ago</p>
                                     </div>
-                                    <FaRegFaceGrinWink />
+                                    <div className='flex px-3 justify-between items-center border'>
+                                        <div className=''>
+                                            <input className='commentInput' type="text" placeholder="Add a comment..." />
+                                        </div>
+                                        <FaRegFaceGrinWink />
+                                    </div>
                                 </div>
                             </div>
 
