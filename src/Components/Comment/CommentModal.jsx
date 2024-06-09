@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Modal, ModalOverlay, ModalContent, ModalBody } from '@chakra-ui/react'
 import { BsBookmark, BsBookmarkFill, BsThreeDots } from 'react-icons/bs';
 import CommentCard from './CommentCard';
@@ -8,19 +8,12 @@ import { RiSendPlaneLine } from 'react-icons/ri';
 import { FaRegFaceGrinWink } from 'react-icons/fa6';
 import './CommentModal.css'
 
-const CommentModal = ({ onClose, isOpen, isSaved, IsPostLiked, handledPostLike, handleSavePost }) => {
-    const [isPostLiked, setIsPostLiked] = useState(false)
-    const [isBookmarked, setIsBookmarked] = useState(false)
-    const handleLiked = () => {
-        setIsPostLiked(!isPostLiked);
-    }
-    const handleBookmarked = () => {
-        setIsBookmarked(!isBookmarked)
-    }
-
-    return (
+const CommentModal = ({ 
+    onClose, isOpen, isSaved, isPostLiked, handlePostLike, handleSavePost }) => {
+    const comments = [1,1,1]
+     return (
         <div>
-            <Modal size={"4xl"} onClose={onClose} isOpen={true} isCentered>
+            <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>
                     <ModalBody>
@@ -46,20 +39,20 @@ const CommentModal = ({ onClose, isOpen, isSaved, IsPostLiked, handledPostLike, 
                                 </div>
                                 <hr />
                                 <div className='comment'>
-                                    {[1, 1, 1,].map(() => <CommentCard />)}
+                                    {comments.map(() => <CommentCard />)}
                                 </div>
 
                                 <div className='absolute bottom-0 w-[98%] py-3'>
                                     <div className='flex justify-between items-center w-full px-5 py-4'>
                                         <div className='flex items-center space-x-2 w-full'>
-                                            {isPostLiked ? <AiFillHeart className='text-2xl text-red-500 hover:opacity-50 cursor-pointer' onClick={handleLiked} /> : <AiOutlineHeart className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleLiked} />}
+                                            {isPostLiked ? <AiFillHeart className='text-2xl text-red-500 hover:opacity-50 cursor-pointer' onClick={handlePostLike} /> : <AiOutlineHeart className='text-2xl hover:opacity-50 cursor-pointer' onClick={handlePostLike} />}
                                             <FaRegComment className="text-2xl hover:opacity-50 cursor-pointer" />
                                             <RiSendPlaneLine className='text-2xl hober:opacity-50 cursor-pointer' />
                                         </div>
                                         <div>
-                                            {isBookmarked ? (
-                                                <BsBookmarkFill className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleBookmarked} />)
-                                                : (< BsBookmark className='cursor-pointer' onClick={handleBookmarked} />)}
+                                            {isSaved ? (
+                                                <BsBookmarkFill className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleSavePost} />)
+                                                : (< BsBookmark className='cursor-pointer' onClick={handleSavePost} />)}
 
                                         </div>
                                     </div>
