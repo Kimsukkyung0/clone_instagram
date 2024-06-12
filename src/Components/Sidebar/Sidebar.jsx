@@ -7,7 +7,7 @@ import { useDisclosure } from '@chakra-ui/react'
 
 
 const Sidebar = () => {
-    const {isOpen, onOpen, onClose} = useDisclosure()
+    const {isOpen, onClose, onOpen } = useDisclosure()
     const [activeTab, setActiveTab] = useState();
     const navigate = useNavigate();
     const handleTabClick = (title) =>{
@@ -19,7 +19,7 @@ const Sidebar = () => {
         }else if (title === "Story"){
             navigate("/Story")
         }else if (title ==="Create"){
-            // onOpen()
+            onOpen()
         }
         }
 
@@ -49,7 +49,7 @@ const Sidebar = () => {
                     <p className="ml-5">More</p>
                 </div>  
             </div>       
-            <CreatePostModal onClose={onClose} isOpen={isOpen}/>   
+            <CreatePostModal isOpen={isOpen}  onClose={onClose}/>   
         </div>
     )
 }

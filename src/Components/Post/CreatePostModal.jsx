@@ -6,14 +6,14 @@ import { GrEmoji } from "react-icons/gr"
 import { GoLocation } from "react-icons/go"
 
 const CreatePostModal = (
-    onClose, isOpen
+     {isOpen, onClose}
 ) => {
     const [isDragOver, setIsDragOver] = useState(false)
     const [file, setFile] = useState();
     const [caption,setCaption]=useState("");
     const handleDrop = (event) => {
         event.preventDefault()
-        const droppedFile = event.dataTransfer.file[0];
+        const droppedFile = event.dataTransfer.files[0];
         if (droppedFile.type.startsWith("image/") || droppedFile.type.startWith("video/")) {
             setFile(droppedFile)
         }
@@ -31,7 +31,6 @@ const CreatePostModal = (
     const handleOnChange = (e) => {
 
         const file = e.target.files[0];
-        console.log("fiile : ", file);
         if (file && (file.type.startsWith("image/") || file.type.startsWith("video/"))) {
             setFile(file);
             console.log("fiile : ", file);
@@ -49,8 +48,8 @@ const CreatePostModal = (
             <Modal size={"4xl"} onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
                 <ModalContent>
-                    <div className='flex justify-between py-1 px-10 items-center'>
-                        <p>Create New Post</p>
+                    <div className='flex justify-between py-2 px-10 items-center'>
+                        <p className='font-semibold'>Create New Post</p>
                         <Button varient={"ghost"} size="sm" colorScheme={"blue"}>
                             Share
                         </Button>

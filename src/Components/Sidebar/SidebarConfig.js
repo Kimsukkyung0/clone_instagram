@@ -9,8 +9,8 @@ export const menu=[
     {title:"Search", icon:<AiOutlineSearch className="text-zxl mr-5"/> ,activeIcon:<RiSearchFill className="text-zxl mr-5"/>},
     {title:"Explore", icon:<AiOutlineCompass className="text-zxl mr-5"/>, activeIcon:<AiFillCompass className="text-zxl mr-5"/> },
     {title:"Reels", icon:<RiVideoLine className="text-zxl mr-5"/>, activeIcon:<RiVideoFill className="text-zxl mr-5"/>},
-    {title:"message", icon:<AiOutlineMessage className="text-zxl mr-5"/>, activeIcon:<AiFillMessage className="text-zxl mr-5"/>},
+    {title:"Message", icon:<AiOutlineMessage className="text-zxl mr-5"/>, activeIcon:<AiFillMessage className="text-zxl mr-5"/>},
     {title:"Notification", icon:<AiOutlineHeart className="text-zxl mr-5"/>, activeIcon:<AiFillHeart className="text-zxl mr-5"/>},
-    {title:"create", icon:<CiSquarePlus className="text-zxl mr-5"/>, activeIcon:<FaSquarePlus className="text-zxl mr-5"/>},
+    {title:"Create", icon:<CiSquarePlus className="text-zxl mr-5"/>, activeIcon:<FaSquarePlus className="text-zxl mr-5"/>},
     {title:"Profile", icon:<CgProfile className="text-zxl mr-5"/>, activeIcon:<CgProfile className="text-zxl mr-5"/>},
 ];
