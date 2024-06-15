@@ -17,7 +17,7 @@ const HomePage = () => {
                     {[1,1].map(()=><PostCard />)}
                 </div>
                 </div>
-                <div className='w-[30%]'>
+                <div className='w-[30%] pl-20'>
                     <HomeRight />
                 </div>
             </div>

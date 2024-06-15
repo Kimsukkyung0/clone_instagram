@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import ProgressBar from './ProgressBar'
+import { RxDividerVertical } from 'react-icons/rx'
 
 const StoryViewerContainer = styled.div`
     display:flex;
@@ -10,7 +11,7 @@ const StoryViewerContainer = styled.div`
     background-color:black;
 `
 
-const StoryImage = styled.div`
+const StoryImage = styled.img`
     max-height:90vh;
     object-fit : contain;
 `
@@ -34,15 +35,18 @@ const StoryViewer = ({stories}) =>{
     },[currentStoryIndex])
 
     return(
-        <div>
-            <div>
-                <StoryViewerContainer>
+        <div className='relative w-full'>
+                <StoryViewerContainer className='w-full '>
                     <StoryImage src={stories?.[currentStoryIndex].image} />
-                    <div>
-                        {stories.map((item,index)=><ProgressBar duration={2000} key={index} index={index} activeIndex={activeIndex}/>)}
+                    <div className='absolute flex top-0 w-full'>
+                        {stories.map((index)=><ProgressBar 
+                        key={index}  
+                        index={index} 
+                        activeIndex={activeIndex}
+                        duration={2000} 
+                        />)}
                     </div>
                 </StoryViewerContainer>
-            </div>
         </div>
     )
 }
