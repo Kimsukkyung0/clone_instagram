@@ -9,8 +9,8 @@ const StoryCircle = () =>{
     }
     return(
         <div onClick={handleNavigate} className='cursor-pointer flex flex-col'>
-            <img className="w-16 h-16 rounded-full" src="https://cdn.pixabay.com/photo/2023/11/20/13/21/shape-8401083_1280.png" alt="" />
-            <p>Username</p>
+            <img className="w-16 h-16 ml-2 mr-2 rounded-full" src="	https://cdn.pixabay.com/photo/2021/09/24/20/59/jellyfish-6653502_1280.jpg" alt="" />
+            <p className='text-center'>Username</p>
         </div>
     )
 }

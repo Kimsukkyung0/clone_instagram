@@ -10,7 +10,7 @@ import Story from '../Story/Story';
         return (
         <div>
             <div className="flex">
-                <div className='w-[40vw] border border-l-slate-500 pl-10 '>
+                <div className='w-[30%] border border-l-slate-500 pl-10 '>
                     <Sidebar />
                 </div>
                 <div className='w-full'>

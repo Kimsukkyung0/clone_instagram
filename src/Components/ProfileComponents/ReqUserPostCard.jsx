@@ -7,7 +7,7 @@ const ReqUserPostCard = () =>{
     return (
         <div className='p-2'>
             <div className='post w-60 h-60 '>
-                <img className="cursor-pointer" src="https://cdn.pixabay.com/photo/2024/05/11/19/39/common-columbine-8755584_1280.jpg" alt='' />
+                <img className="cursor-pointer" src="https://cdn.pixabay.com/photo/2021/05/02/08/33/jellyfish-6222849_1280.jpg" alt='' />
                 <div className="overlay">
                     <div className="overlay-text flex justify-between">
                         <div className='flex space-x-1'>
