@@ -22,6 +22,8 @@ const Sidebar = () => {
             navigate("/")
         }else if (title ==="Create"){
             onOpen()
+        }else if (title === "Explore"){
+            navigate("/explore")
         }
         if (title ==="Search"){
             setIsSearchVisible(true);
