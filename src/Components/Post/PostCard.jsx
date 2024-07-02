@@ -62,9 +62,9 @@ const PostCard = () => {
                     </div>
                     <div>
                         {isSaved ? (
-                            <BsBookmarkFill onClick={handleSavePost} className='text-2xl hover:opacity-50 cursor-pointer'/>)
+                            <BsBookmarkFill onClick={handleSavePost} className='text-xl hover:opacity-50 cursor-pointer'/>)
                             : (
-                                < BsBookmark onClick={handleSavePost} className='cursor-pointer'/>
+                                < BsBookmark onClick={handleSavePost} className='text-xl cursor-pointer'/>
                             )}
 
                     </div>

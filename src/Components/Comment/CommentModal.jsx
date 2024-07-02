@@ -51,8 +51,8 @@ const CommentModal = ({
                                         </div>
                                         <div>
                                             {isSaved ? (
-                                                <BsBookmarkFill className='text-2xl hover:opacity-50 cursor-pointer' onClick={handleSavePost} />)
-                                                : (< BsBookmark className='cursor-pointer' onClick={handleSavePost} />)}
+                                                <BsBookmarkFill className='text-xl hover:opacity-50 cursor-pointer' onClick={handleSavePost} />)
+                                                : (< BsBookmark className='text-xl cursor-pointer' onClick={handleSavePost} />)}
 
                                         </div>
                                     </div>

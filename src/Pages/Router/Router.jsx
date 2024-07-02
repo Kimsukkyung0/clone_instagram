@@ -15,6 +15,7 @@ import Story from '../Story/Story';
                 </div>
                 <div className='w-full'>
                     <Routes>
+                        
                         <Route path='/' element={<HomePage />}></Route>
                         <Route path='/username' element={<Profile />}></Route>
                         <Route path='/story' element={<Story />}></Route>

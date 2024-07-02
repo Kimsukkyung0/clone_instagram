@@ -1,0 +1,11 @@
+.story-btn{
+    background-image: url(https://img.freepik.com/free-vector/instagram-background-in-gradient-colors_23-2147819865.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1719705600&semt=ais_user);
+    height:4.5rem;
+    width:4.5rem;
+    z-index: 9;
+    align-items:center
+}
+.story-pic{
+    z-index: -9;
+    display: relative;
+}
