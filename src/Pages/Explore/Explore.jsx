@@ -5,7 +5,7 @@ import ExploreCard from '../../Components/ExploreComponents/ExploreCard';
 const Explore = () =>{
     return (
         <div className="ml-40 mt-10 h-full justify-center">
-            <div className='flex flex-wrap w-[70%]'>
+            <div className='flex flex-wrap w-[70%] explore-wrap'>
             {[1,1,1,1,1,1,1,1,1].map(()=><ExploreCard />)}
             </div>
         </div>

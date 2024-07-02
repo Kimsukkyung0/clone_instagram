@@ -9,7 +9,7 @@ const HomePage = () => {
     return(
         <div>
             <div className='mt-10 flex w-[100%] justify-center'>
-                <div className='w-[48%] px-10'>
+                <div className='w-[40%] px-10'>
                     <div className="storyDiv flex space-x-4 rounded-md justify-start w-full overflow-hidden">
                         {[1,1,1,1,1,1,1,1,1,1,1,1,1].map(()=><StoryCircle />)}
                     </div>
