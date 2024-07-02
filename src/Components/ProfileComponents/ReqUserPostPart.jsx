@@ -37,7 +37,7 @@ const ReqUserPostPart = () =>{
         )}
         </div>            
         <div className='flex flex-wrap'>
-           {[1,1,1,1,1,1,1,1].map(()=><ReqUserPostCard></ReqUserPostCard>)}
+           {[1,1,1,1,1,1,1,1,1].map(()=><ReqUserPostCard></ReqUserPostCard>)}
         </div>
     </div>
     )

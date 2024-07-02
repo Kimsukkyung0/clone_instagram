@@ -4,8 +4,8 @@ import ExploreCard from '../../Components/ExploreComponents/ExploreCard';
 // import ReqUserPostPart from '../../Components/ProfileComponents/ReqUserPostPart';
 const Explore = () =>{
     return (
-        <div className="ml-40 h-full justify-center">
-            <div className='flex flex-wrap w-[60%]'>
+        <div className="ml-40 mt-10 h-full justify-center">
+            <div className='flex flex-wrap w-[70%]'>
             {[1,1,1,1,1,1,1,1,1].map(()=><ExploreCard />)}
             </div>
         </div>
