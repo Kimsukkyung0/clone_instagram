@@ -5,14 +5,15 @@ import {useNavigate} from 'react-router-dom'
 import CreatePostModal from '../Post/CreatePostModal';
 import { useDisclosure } from '@chakra-ui/react'
 import SearchComponents from '../SearchComponents/SearchComponents';
+import NotificationComponents from '../NotificationComponents/NotificationComponents';
 
 
 const Sidebar = () => {
     const {isOpen, onClose, onOpen } = useDisclosure()
     const [activeTab, setActiveTab] = useState();
     const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [isNotiVisible, setIsNotiVisible] = useState(false);
     const navigate = useNavigate();
-
 
     const handleTabClick = (title) =>{
         setActiveTab(title) 
@@ -27,9 +28,15 @@ const Sidebar = () => {
         }
         if (title ==="Search"){
             setIsSearchVisible(true);
-         }else setIsSearchVisible(false);
-    
+         }else {
+            setIsSearchVisible(false);
+         }
+        if (title ==="Notification"){
+            setIsNotiVisible(true);
+         }else {
+            setIsNotiVisible(false);
         }
+    }
 
     return(
         <div className='sticky top-0 h-[100vh] flex'>
@@ -60,8 +67,10 @@ const Sidebar = () => {
             </div>       
             <CreatePostModal isOpen={isOpen}  onClose={onClose}/>   
             {isSearchVisible &&< SearchComponents />}
+            {isNotiVisible && < NotificationComponents />}
         </div>
     )
 }
+
 
 export default Sidebar;
